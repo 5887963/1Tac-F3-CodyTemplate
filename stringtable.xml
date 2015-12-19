@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="1TAK-F3">
+	<Package name="1TAK-F3-PAK">
+		<Container name="META">
+			<Key ID="str_1tak_loadName">
+				<Original>*** Insert mission name here. ***</Original>
+				<English>*** Insert mission name here. ***</English>
+			</Key>
+			<Key ID="str_1tak_loadMission">
+				<Original>Made with the F3 Mission Development Framework</Original>
+				<English>Made with the F3 Mission Development Framework</English>
+			</Key>
+			<Key ID="str_1tak_overviewText">
+				<Original>*** Insert mission-selection text here. ***</Original>
+				<English>*** Insert mission-selection text here. ***</English>
+			</Key>
+			<Key ID="str_1tak_Author">
+				<Original>*** Insert mission author name here. ***</Original>
+				<English>*** Insert mission author name here. ***</English>
+			</Key>
+		</Container>
+	</Package>
+</Project>

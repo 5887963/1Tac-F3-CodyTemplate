@@ -15,11 +15,10 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
-onLoadMission = "Made with the F3 Mission Development Framework";
-author = "*** Insert mission author name here. ***";
+onLoadName = $STR_1tak_loadName;
+onLoadMission = $STR_1tak_loadMission;
+author = $STR_1tak_Author;
 loadScreen = "1tac_load.jpg";
-overviewPicture = "overviewLogo.jpg";
 
 // ============================================================================================
 
@@ -149,7 +148,7 @@ class Params
 
 // F3 - Mission Conditions Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-	
+
 	class f_param_weather
 	{
 		title = "Weather";
