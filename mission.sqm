@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=723;
+		nextID=725;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9257.5967,164.14359,7190.002};
-		dir[]={-0.063815899,-0.55632496,0.82852429};
-		up[]={-0.042723715,0.83096248,0.55468404};
-		aside[]={0.99705625,6.3304469e-008,0.076797009};
+		pos[]={9258.71,53.280197,7278.7729};
+		dir[]={-0.031542528,-0.41325453,0.91008621};
+		up[]={-0.014314501,0.9106105,0.41301215};
+		aside[]={0.99941373,3.9639417e-008,0.034638565};
 	};
 };
 binarizationWanted=0;
@@ -62,8 +62,7 @@ addons[]=
 	"A3_Characters_F_INDEP",
 	"A3_Characters_F_Civil",
 	"A3_Modules_F",
-	"A3_Data_F_Curator_Virtual",
-	"A3_Modules_F_Curator_Curator"
+	"A3_Characters_F_Bootcamp"
 };
 randomSeed=12241513;
 class ScenarioData
@@ -123,7 +122,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=257;
+		items=256;
 		class Item0
 		{
 			dataType="Marker";
@@ -13595,128 +13594,133 @@ class Mission
 		};
 		class Item255
 		{
-			dataType="Logic";
-			class PositionInfo
+			dataType="Group";
+			side="Civilian";
+			class Entities
 			{
-				position[]={9285.5654,16.125214,7397.3105};
-				angles[]={0.025327841,0,0.077179953};
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9258.0518,11.327983,7379.0566};
+					};
+					side="Civilian";
+					flags=3;
+					class Attributes
+					{
+						name="UnitCIV_GM";
+						description="Game Master (optional)";
+						isPlayer=1;
+					};
+					id=724;
+					type="C_Soldier_VR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=2;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isEngineer";
+							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=2;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="unitName";
+							expression="_this setname _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="GM";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
 			};
-			name="gm1";
-			isPlayer=1;
-			isPlayable=1;
-			description="Game Master";
-			id=721;
-			type="VirtualCurator_F";
-		};
-		class Item256
-		{
-			dataType="Logic";
-			class PositionInfo
+			class Attributes
 			{
-				position[]={9251.9521,14.624715,7401.9263};
-				angles[]={6.0883555,0,0.0039967569};
 			};
-			id=722;
-			type="ModuleCurator_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleCurator_F_Owner";
-					expression="_this setVariable ['Owner',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="gm1";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleCurator_F_Forced";
-					expression="_this setVariable ['Forced',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleCurator_F_Name";
-					expression="_this setVariable ['Name',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleInfo";
-					expression="false";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ModuleCurator_F_Addons";
-					expression="_this setVariable ['Addons',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=3;
-						};
-					};
-				};
-				nAttributes=5;
-			};
+			id=723;
 		};
 	};
 };
